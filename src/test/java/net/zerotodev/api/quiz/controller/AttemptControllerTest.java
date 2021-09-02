@@ -62,7 +62,7 @@ class AttemptControllerTest {
 
     private void genericParameterizedTest(final boolean correct) throws Exception {
         given(quizService.checkAttempt(any(Attempt.class))).willReturn(correct);
-        User user = new User("john", "happy-john");
+        User user = new User("john","happy-john","john","john@test.com");
         Quiz quiz = new Quiz(50,70);
         Attempt attempt = new Attempt(user, quiz, 3500, correct);
         assertThat(attempt.getUser().getAlias(), is(equalTo("happy-john")));
